@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+  <interface>
+    <field id="requestExit" type="boolean" alwaysNotify="true" />
+  </interface>
+
+  <children>
+    <Poster id="bgGradient" uri="pkg:/images/bg_gradient_hd.png" width="1280" height="720" />
+    <Rectangle id="bgTintTop" color="0x1A2330AA" width="1280" height="180" />
+
+    <Label id="header" text="NBA" translation="[60,20]" width="220" height="54" />
+    <Label id="status" translation="[320,30]" width="900" height="34" />
+
+    <Group id="tabBar" translation="[60,92]">
+      <Rectangle id="tabPill" color="0x1A232ECC" width="256" height="48" />
+      <Label id="tabNBA" text="NBA" translation="[18,10]" width="96" height="30" />
+      <Label id="tabNCAA" text="NCAA" translation="[140,10]" width="96" height="30" />
+      <Rectangle id="tabNBAUnderline" translation="[16,42]" width="88" height="3" color="0x8BC0FFFF" />
+      <Rectangle id="tabNCAAUnderline" translation="[138,42]" width="88" height="3" color="0x8BC0FFFF" visible="false" />
+    </Group>
+
+    <MarkupGrid
+      id="gamesGrid"
+      translation="[60,156]"
+      itemComponentName="GameCard"
+      itemSize="[572,188]"
+      itemSpacing="[16,16]"
+      numColumns="2"
+      numRows="3"
+      />
+
+    <Group id="injuryOverlay" visible="false" opacity="0">
+      <Rectangle id="injuryOverlayDim" color="0x000000AA" width="1280" height="720" />
+      <Group id="injuryOverlayPanel" translation="[120,130]">
+        <Rectangle id="injuryOverlayOuterBg" color="0x0B0F14EE" width="860" height="260" />
+        <Rectangle id="injuryOverlayInnerBg" color="0x1E2936FF" width="828" height="228" translation="[16,16]" />
+        <Label id="injuryOverlayTitle" text="Injuries" translation="[36,32]" width="788" height="40" />
+        <Label id="injuryOverlayBody" translation="[36,80]" width="788" height="108" numLines="4" />
+        <Label id="injuryOverlayHint" text="Press Back or OK to close" translation="[36,204]" width="788" height="28" />
+      </Group>
+    </Group>
+
+    <Timer id="pollTimer" repeat="false" duration="1" />
+  </children>
+
+  <script type="text/brightscript" uri="pkg:/source/Theme.brs" />
+  <script type="text/brightscript" uri="pkg:/source/GameAdapter.brs" />
+  <script type="text/brightscript" uri="pkg:/source/config.brs" />
+  <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+</component>

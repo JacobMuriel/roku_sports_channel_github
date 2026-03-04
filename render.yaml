@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: games-backend
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    healthCheckPath: /health

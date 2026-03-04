@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="RowItem" extends="Group">
+  <interface>
+    <field id="itemContent" type="node" onChange="onItemContentChanged" />
+    <field id="itemHasFocus" type="boolean" onChange="onItemFocusChanged" />
+  </interface>
+
+  <children>
+    <Card id="card" translation="[0,4]" />
+    <Rectangle id="myTeamBadge" width="84" height="28" translation="[24,20]" visible="false" />
+    <Label id="myTeamText" text="MY TEAM" translation="[34,22]" width="72" height="24" visible="false" />
+    <Label id="matchup" translation="[124,20]" width="964" height="40" horizAlign="left" />
+    <Label id="meta" translation="[124,60]" width="964" height="30" horizAlign="left" />
+    <Label id="scoreline" translation="[124,92]" width="964" height="32" horizAlign="left" />
+    <Label id="network" translation="[124,108]" width="964" height="24" horizAlign="left" />
+    <Label id="starInjuries" translation="[124,128]" width="964" height="24" horizAlign="left" numLines="2" />
+  </children>
+
+  <script type="text/brightscript" uri="pkg:/source/Theme.brs" />
+  <script type="text/brightscript" uri="pkg:/components/RowItem.brs" />
+</component>

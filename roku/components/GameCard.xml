@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="GameCard" extends="Group">
+  <interface>
+    <field id="itemContent" type="node" onChange="onItemContentChanged" />
+    <field id="itemHasFocus" type="boolean" onChange="onItemFocusChanged" />
+  </interface>
+
+  <children>
+    <Card id="mainCard" translation="[12,10]" />
+
+    <Poster id="awayLogo" translation="[28,26]" width="26" height="26" />
+    <Label id="awayName" translation="[62,24]" width="252" height="32" horizAlign="left" />
+    <Label id="awayRight" translation="[326,24]" width="64" height="30" horizAlign="right" />
+
+    <Poster id="homeLogo" translation="[28,62]" width="26" height="26" />
+    <Label id="homeName" translation="[62,60]" width="252" height="32" horizAlign="left" />
+    <Label id="homeRight" translation="[326,60]" width="64" height="30" horizAlign="right" />
+
+    <Label id="infoLine1" translation="[404,24]" width="146" height="28" horizAlign="right" />
+    <Label id="provider" translation="[404,52]" width="146" height="24" horizAlign="right" />
+
+    <Rectangle id="injuryBar" translation="[26,102]" width="520" height="48" visible="false" />
+    <Label id="injurySummary" translation="[38,108]" width="496" height="34" numLines="2" visible="false" />
+  </children>
+
+  <script type="text/brightscript" uri="pkg:/source/Theme.brs" />
+  <script type="text/brightscript" uri="pkg:/components/GameCard.brs" />
+</component>
